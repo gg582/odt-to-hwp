@@ -1,0 +1,42 @@
+{
+  "name": "odt-to-hwp",
+  "version": "0.1.0",
+  "description": "Electron app for converting ODT files to Hancom HWP or HWPX formats using HwpCtrl SaveAs",
+  "main": "main.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --dir"
+  },
+  "keywords": [
+    "electron",
+    "hancom",
+    "hwp",
+    "conversion"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "electron-updater": "^6.1.8"
+  },
+  "devDependencies": {
+    "electron": "^28.3.1",
+    "electron-builder": "^24.9.1"
+  },
+  "optionalDependencies": {
+    "winax": "^2.1.0"
+  },
+  "build": {
+    "appId": "com.example.odttohancom",
+    "productName": "ODT to Hancom Converter",
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    }
+  }
+}
