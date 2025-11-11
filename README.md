@@ -32,8 +32,3 @@ The build output will be written to the `dist/` directory.
 - The renderer process collects the user's input (source ODT and desired output format).
 - The main process forwards conversion requests to the Node backend.
 - The backend uses `winax` to automate the Hancom HWP ActiveX control (`HWPFrame.HwpObject`) and invokes `SaveAs` with the requested format.
-
-## Limitations
-
-- Conversion only works on Windows because Hancom's automation components are Windows-only.
-- On non-Windows systems the application UI is disabled and displays guidance on the missing dependencies.
