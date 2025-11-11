@@ -6,11 +6,13 @@ const resultContainer = document.getElementById('result');
 const statusContainer = document.getElementById('env-status');
 
 async function refreshEnvironmentStatus() {
+  if (!window.electronAPI) {
+    return;
+  }
   const status = await window.electronAPI.getEnvironmentStatus();
   if (status.platform !== 'win32') {
     statusContainer.innerHTML =
       '<p class="warning">Windows is required to control Hancom HWP. Conversion will not run on this platform.</p>';
-    form.classList.add('disabled');
   } else if (!status.hasActiveXSupport) {
     statusContainer.innerHTML =
       '<p class="warning">Hancom HWP ActiveX control (winax) is unavailable. Install Hancom Office and ensure winax is installed.</p>';

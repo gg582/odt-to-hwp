@@ -6,7 +6,8 @@
   "type": "commonjs",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --dir"
+    "build": "electron-builder --dir",
+    "start:web": "serve web"
   },
   "keywords": [
     "electron",
@@ -21,7 +22,8 @@
   },
   "devDependencies": {
     "electron": "^28.3.1",
-    "electron-builder": "^24.9.1"
+    "electron-builder": "^24.9.1",
+    "serve": "^14.2.5"
   },
   "optionalDependencies": {
     "winax": "^2.1.0"
@@ -37,6 +39,9 @@
     ],
     "directories": {
       "output": "dist"
+    },
+    "linux": {
+      "target": "AppImage"
     }
   }
 }
