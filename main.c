@@ -1,4 +1,5 @@
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 #include "config.h"
 #include "physics.h"
 #include "render.h"
@@ -9,6 +10,8 @@
 int main(int argc, char* argv[]) {
     // SDL 초기화
     SDL_Init(SDL_INIT_VIDEO);
+    TTF_Init();
+    
     SDL_Window* window = SDL_CreateWindow(
         "물리 시뮬레이션",
         SDL_WINDOWPOS_CENTERED,
@@ -83,6 +86,7 @@ int main(int argc, char* argv[]) {
     // 정리
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
+    TTF_Quit();
     SDL_Quit();
     
     return 0;
